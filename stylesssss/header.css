@@ -35,6 +35,7 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgb(228,228,228);
+    z-index: 100;
 }
 
 .left-section{
@@ -65,11 +66,13 @@
     height: 24px;
     margin-left: 24px;
     margin-right: 24px;
+    cursor: pointer;
 }
 
 .youtube-logo{
-    height: 40px;
+    height: 100px;
     width: 80px;
+    cursor: pointer;
 }
 
 .search-button{
@@ -81,6 +84,56 @@
     border-color: rgb(192,192,192);
     margin-left: -1px;
     margin-right: 10px;
+
+    position: relative;
+}
+.search-button .tooltip,
+.voice-search-button .tooltip,
+.upload-icon-container .tooltip,
+.youtube-apps-container .tooltip,
+.notification-icon-container .tooltip{
+    font-family: Roboto,Arial;
+    position:absolute;
+    background-color: gray;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    bottom: -30px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.search-button,
+.voice-search-button,
+.upload-icon-container,
+.youtube-apps-container,
+.notification-icon-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-button:hover .tooltip,
+.voice-search-button:hover .tooltip,
+.upload-icon-container:hover .tooltip,
+.youtube-apps-container:hover .tooltip,
+.notification-icon-container:hover .tooltip{
+    opacity: 1;
+}
+
+.search-button,
+.voice-search-button,
+.upload-icon-container,
+.youtube-apps-container,
+.notification-icon-container{
+    cursor: pointer;
 }
 
 .voice-search-button{
@@ -93,7 +146,6 @@
 
 .search-icon{
     height: 25px;
-    margin-top: 4px;
 }
 
 .voice-search-icon{
@@ -118,5 +170,26 @@
     border-radius: 16px;
     margin-bottom: 8px;
     width: 30px;
+    cursor: pointer;
+}
+
+.notification-icon-container{
+    position: relative;
+
+}
+
+.notification-count{
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    background-color: rgb(200, 0, 0);
+    color: white;
+    font-family: Roboto,Arial;
+    font-size: 11px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 10px;
 }
 
